@@ -13,8 +13,8 @@ func check(e error) {
 	}
 }
 
-var clients = make(map[*websocket.Conn]bool) // connected clients
-var broadcast = make(chan Message)           // broadcast channel
+var clients = make(map[*websocket.Conn]bool)
+var broadcast = make(chan Message)           
 
 var upgrader = websocket.Upgrader{
 	CheckOrigin: func(r *http.Request) bool {
